@@ -1,0 +1,58 @@
+name: CI/CD Pipeline Example
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build project
+        run: echo " 🪛 Building project.."
+
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: testing code
+        run: echo "✅ Running tests..."
+
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Deploying code
+        run: echo "Deployment complete! 🚀🎉"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
